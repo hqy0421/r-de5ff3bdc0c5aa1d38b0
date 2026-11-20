@@ -1,5 +1,18 @@
 # infer (development version)
 
+* Added resumable batch web entry. `web_entry_batch()` binds a table of scalar
+  observations, a business key, form/query adapter configuration, and an
+  analysis formula; `web_entry_run()` fills and saves the records in a
+  caller-supplied logged-in browser, confirms each one by reading it back, and
+  runs `specify()`/`fit()` on the confirmed observations. Runs can be resumed
+  safely: remotely saved records are adopted instead of being entered again,
+  keys holding different values are reported as conflicts and never
+  overwritten, unknown outcomes are verified before any further submission, and
+  progress is bound to the original data and configuration. A batch that is not
+  fully confirmed keeps the previous usable analysis. `web_entry_verify()` and
+  `web_entry_receipts()` inspect state without saving. The existing interface
+  is unchanged.
+
 # infer 1.1.0
 
 * Fixed bug where adding `shade_confidence_interval(NULL)` or `shade_p_value(NULL)` 

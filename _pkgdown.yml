@@ -41,6 +41,12 @@ reference:
   - observe
   - ends_with("_test")
   - ends_with("_stat")
+- title: Batch web entry
+  contents:
+  - web_entry_batch
+  - web_entry_run
+  - web_entry_verify
+  - web_entry_receipts
 - title: Miscellaneous
   contents:
   - infer
